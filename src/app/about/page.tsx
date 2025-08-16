@@ -42,7 +42,7 @@ export default function AboutPage() {
               rel='noopener noreferrer'
             >
               <Button variant='outline'>
-                <Github className='mr-2 h-4 w-4' />
+                {/* <Github className='mr-2 h-4 w-4' /> */}
                 GitHub
               </Button>
             </a>
@@ -52,7 +52,7 @@ export default function AboutPage() {
               rel='noopener noreferrer'
             >
               <Button variant='outline'>
-                <Linkedin className='mr-2 h-4 w-4' />
+                {/* <Linkedin className='mr-2 h-4 w-4' /> */}
                 LinkedIn
               </Button>
             </a>
@@ -62,7 +62,7 @@ export default function AboutPage() {
               rel='noopener noreferrer'
             >
               <Button>
-                <User className='mr-2 h-4 w-4' />
+                {/* <User className='mr-2 h-4 w-4' /> */}
                 Portfolio
               </Button>
             </a>
