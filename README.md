@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![GitHub Logo](./src/app/github.png)
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Gemini%20AI-FF6F61?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI" />
+</p>
 
-First, run the development server:
+# Crypto Dash
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A modern cryptocurrency dashboard built with **Next.js**, featuring real-time market data, interactive charts, and AI-powered sentiment analysis with **Gemini AI**.
+
+## 🚀 Features
+
+- 🔍 Search & filter cryptocurrencies by name or symbol
+- 📊 Dynamic coin detail pages with interactive charts (using React Charts / Chart.js)
+- 💱 BTC ⇄ USD price converter
+- 🤖 Gemini AI-powered market sentiment analysis
+
+## 🛠 Tech Stack
+
+- Next.js (App Router)
+- React Hooks (`useState`, `useEffect`)
+- Chart.js / React Charts
+- CoinGecko API (crypto market data)
+- Gemini AI API (sentiment analysis)
+- Tailwind CSS (modern UI styling)
+
+## 📂 Project Structure
+
+```
+/app
+  /api
+    /sentiment        # API route for Gemini AI sentiment analysis
+  /coin/[id]          # Dynamic coin detail pages
+/components           # UI components (charts, cards, converter)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ How to Use Gemini AI in This Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install dependency:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm i @google/generative-ai
+   ```
 
-## Learn More
+2. Create `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
+   ```env
+   GEMINI_API_KEY=your_secret_key_here
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Add API route (`app/api/sentiment/route.ts`):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   - Sends news/headlines to Gemini AI.
+   - Receives sentiment score, label, and summary as JSON.
 
-## Deploy on Vercel
+4. Use in UI (`SentimentCard.tsx`):
+   - Fetch sentiment data from `/api/sentiment`.
+   - Display score, progress bar, and summary.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧠 Challenges
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Managing SSR vs CSR with Next.js for API data
+- Handling async data fetching with `useEffect` and API routes
+- Creating dynamic routes for coin detail pages
+- Integrating and visualizing multiple APIs (CoinGecko + Gemini AI)
+
+## 📚 New Skills Learned
+
+- Next.js App Router and dynamic routing
+- Efficient API fetching in Next.js
+- Data visualization with React Charts
+- AI integration (Gemini AI API)
+- Better state management with React Hooks
+
+---
+
+Made with ❤️ using Next.js and Gemini AI.
